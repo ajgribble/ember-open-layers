@@ -1,4 +1,4 @@
-ember-cli-open-layers
+ember-openlayers
 ==============================================================================
 
 [Short description of the addon.]
@@ -15,7 +15,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install ember-cli-open-layers
+ember install ember-openlayers
 ```
 
 

@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd ember-cli-open-layers`
+* `cd ember-openlayers`
 * `npm install`
 
 ## Linting

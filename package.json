@@ -1,13 +1,21 @@
 {
-  "name": "ember-cli-open-layers",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "name": "ember-openlayers",
+  "version": "0.0.1",
+  "description": "An Ember.js addon for declaratively building maps with OpenLayers",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ol",
+    "openlayers",
+    "open-layers",
+    "ember",
+    "ember-openlayers",
+    "map",
+    "mapping",
+    "maps"
   ],
-  "repository": "",
+  "repository": "https://github.com/ajgribble/ember-openlayers.git",
   "license": "MIT",
-  "author": "",
+  "author": "Adam Gribble <only-one@adamgribble.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"

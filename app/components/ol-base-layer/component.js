@@ -1,0 +1,1 @@
+export { default } from 'ember-openlayers/components/ol-base-layer/component';

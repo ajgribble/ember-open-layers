@@ -1,3 +1,11 @@
-<h2 id="title">Welcome to Ember</h2>
+{{#ol-map}}
+  {{#ol-tile-layer}}
+    {{#if showOsmLayer}}
+      {{ol-source-layer}}
+    {{/if}}
+  {{/ol-tile-layer}}
+  {{ol-view center=center zoom=zoom}}
+{{/ol-map}}
 
+<button {{action "click"}}>Click Me</button>
 {{outlet}}
