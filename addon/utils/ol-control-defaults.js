@@ -11,7 +11,13 @@ import {
   ZoomToExtent
 } from 'ol/control';
 
-export const olEvents = A(['change', 'change:units', 'propertychange']);
+export const olEvents = A([
+  'change',
+  'change:coordinateFormat',
+  'change:projection',
+  'change:units',
+  'propertychange'
+]);
 export const olProperties = A([
   'autoHide',
   'className',
