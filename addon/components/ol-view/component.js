@@ -1,23 +1,11 @@
-import { A } from '@ember/array';
 import BaseLayerComponent from '../ol-base-layer/component';
 import { View } from 'ol';
-import { fromLonLat } from 'ol/proj';
+import defaults from '../../utils/ol-view-defaults';
+// import { fromLonLat } from 'ol/proj';
 
-export default BaseLayerComponent.extend({
-  olProperties: A(['center', 'zoom']),
-
-  zoom: 3,
-
-  init() {
-    this._super(...arguments);
-
-    this.setProperties({
-      center: fromLonLat(this.getWithDefault('center', [0, 0]))
-    })
-  },
-
+export default BaseLayerComponent.extend(defaults, {
   createLayer() {
-    return new View(this.getProperties(['center', 'zoom']));
+    return new View(this.getProperties(Object.keys(defaults)));
   },
 
   addToContainer() {
@@ -27,5 +15,13 @@ export default BaseLayerComponent.extend({
   },
   removeFromContainer() {
     // No reason to remove the view from the container
+  },
+
+  onChangeRotation() {},
+
+  actions: {
+    handleChangeRotation(e) {
+      this.onChangeRotation(e);
+    }
   }
 });
