@@ -23,7 +23,7 @@ export default Controller.extend({
 
   actions: {
     alert(msg) {
-      alert(msg);
+      console.log(msg);
     },
     centerOnMap() {
       this.set('center', fromLonLat([0, 0]));
