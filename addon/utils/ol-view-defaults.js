@@ -1,5 +1,8 @@
 import { A } from '@ember/array';
 
+export const olEvents = A(['change', 'change:center', 'change:resolution', 'change:rotation', 'propertychange']);
+export const olProperties = A(['center', 'maxZoom', 'minZoom', 'properties', 'resolution', 'rotation', 'zoom']);
+
 export default {
   center: undefined,
   constrainRotation: true,
@@ -14,8 +17,5 @@ export default {
   resolutions: undefined,
   rotation: 0,
   zoom: undefined,
-  zoomFactor: 2,
-
-  olEvents: A(['change', 'change:center', 'change:resolution', 'change:rotation', 'propertychange']),
-  olProperties: A(['center', 'maxZoom', 'minZoom', 'properties', 'resolution', 'rotation', 'zoom']),
+  zoomFactor: 2
 }

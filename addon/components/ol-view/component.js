@@ -1,9 +1,11 @@
 import BaseLayerComponent from '../ol-base-layer/component';
 import { View } from 'ol';
-import defaults from '../../utils/ol-view-defaults';
-// import { fromLonLat } from 'ol/proj';
+import defaults, { olEvents, olProperties } from '../../utils/ol-view-defaults';
 
 export default BaseLayerComponent.extend(defaults, {
+  olEvents,
+  olProperties,
+
   createLayer() {
     return new View(this.getProperties(Object.keys(defaults)));
   },
