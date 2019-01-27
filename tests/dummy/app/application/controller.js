@@ -1,4 +1,5 @@
 import Controller from '@ember/controller';
+import { fromLonLat } from 'ol/proj';
 
 function degToRad(degrees) {
   return degrees * (Math.PI / 180);
@@ -15,7 +16,7 @@ export default Controller.extend({
     this._super(...arguments);
 
     this.setProperties({
-      center: [10, 40],
+      center: fromLonLat([46, 20]),
       rotation: degToRad(this.get('rotationDeg'))
     });
   },
@@ -23,6 +24,9 @@ export default Controller.extend({
   actions: {
     alert(msg) {
       alert(msg);
+    },
+    centerOnMap() {
+      this.set('center', fromLonLat([0, 0]));
     },
     click() {
       this.toggleProperty('showOsmLayer');
