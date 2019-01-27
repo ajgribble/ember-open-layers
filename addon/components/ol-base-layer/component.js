@@ -12,8 +12,9 @@ export default Component.extend(ChildMixin, {
 
   usedEvents: computed('olEvents', function() {
     return this.get('olEvents').filter((eventName) => {
-      const methodName = `_${eventName}`;
-      const actionName = `on${classify(eventName.split(':').join(' '))}`;
+      const cleanLabel = classify(eventName.split(':').join(' '));
+      const actionName = `handle${cleanLabel}`;
+      const methodName = `_${cleanLabel}`;
 
       return this.get(methodName) !== undefined || this.get(`actions.${actionName}`) !== undefined;
     });
@@ -58,14 +59,14 @@ export default Component.extend(ChildMixin, {
   _addEventListeners() {
     this._eventHandlers = {};
     this.get('usedEvents').forEach((eventName) => {
-      const actionName = `on${classify(eventName.split(':').join(' '))}`;
-      const methodName = `_${eventName}`;
+      const cleanLabel = classify(eventName.split(':').join(' '));
+      const actionName = `handle${cleanLabel}`;
+      const methodName = `_${cleanLabel}`;
 
       // create an event handler that runs the function inside an event loop.
       this._eventHandlers[eventName] = function(e) {
         run(() => {
           // try to invoke/send an action for this event
-          // this.invokeAction(actionName, e);
           if (this.get(`actions.${actionName}`)) {
             this.send(actionName, e);
           }

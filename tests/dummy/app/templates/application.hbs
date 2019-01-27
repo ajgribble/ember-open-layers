@@ -4,8 +4,10 @@
       {{ol-source-layer}}
     {{/if}}
   {{/ol-tile-layer}}
-  {{ol-view center=center zoom=zoom}}
+  {{ol-view center=center maxZoom=maxZoom rotation=rotation zoom=zoom onChangeRotation=(action "alert" "Rotation!")}}
 {{/ol-map}}
 
-<button {{action "click"}}>Click Me</button>
+<button {{action "click"}}>Toggle Me</button>
+<button {{action "rotate"}}>Rotate Me</button>
+<button {{action "centerOnMap"}}>Center Me</button>
 {{outlet}}
